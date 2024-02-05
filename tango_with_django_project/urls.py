@@ -20,10 +20,11 @@ from rango import views
 from django.conf import settings
 from django.conf.urls.static import static
 
+#python manage.py test rango.tests_chapter3
 
 urlpatterns = [
 path('', views.index, name='index'),
-path('admin/', admin.site.urls),
 path('rango/', include('rango.urls')),
+path('admin/', admin.site.urls),
 # The above maps any URLs starting with rango/ to be handled by rango. path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
